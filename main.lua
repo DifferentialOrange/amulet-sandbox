@@ -10,3 +10,7 @@ win.scene =
     ^ am.scale(2)
     ^ am.rotate(math.rad(90))
     ^ am.text("Hello there!")
+
+win.scene:action(function(scene)
+    scene"rotate".angle = am.frame_time * 4
+end)
