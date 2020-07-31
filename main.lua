@@ -5,4 +5,8 @@ local win = am.window{
     clear_color = vec4(0, -2, 0.5, 1)
 }
 
-win.scene = am.text("Hello there!")
+win.scene =
+    am.translate(150, 0)
+    ^ am.scale(2)
+    ^ am.rotate(math.rad(90))
+    ^ am.text("Hello there!")
