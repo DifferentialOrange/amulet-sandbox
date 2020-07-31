@@ -1,3 +1,3 @@
 std = {
-    read_globals = { 'log' },
+    read_globals = { 'am', 'log', 'vec4' },
 }
