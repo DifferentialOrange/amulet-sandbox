@@ -12,10 +12,10 @@ local win = am.window{
 win.scene =
     am.group()
     ^ {
-        am.translate(-150, 100)
+        am.translate(-150, 0)
         ^ am.circle(vec2(0, 0), 50, red)
         ,
-        am.translate(150, 100)
+        am.translate(150, 0)
         ^ am.circle(vec2(0, 0), 50, red)
         ,
         am.translate(0, -25)
