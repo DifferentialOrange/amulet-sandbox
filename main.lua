@@ -11,6 +11,7 @@ local ball_pos = vec2(0, -60)
 local ball_angle = 0
 local velocity = vec2(0)
 local spin = 0
+local on_ground = true
 
 -- constants:
 local min_pos = vec2(-180, -60)
