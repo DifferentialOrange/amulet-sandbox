@@ -40,17 +40,23 @@ win.scene:action(function(scene)
             velocity = math.clamp(velocity, min_v, max_v)
             -- set a random spin
             spin = math.random() * 4 - 2
+            -- play bounce sound
+            scene:action(am.play("./sounds/bounce.ogg"))
+            on_ground = false
         end
     end
 
     -- update the ball position
     ball_pos = ball_pos + velocity * am.delta_time
 
-    -- if the ball is on the ground, set the
+    -- if the ball lands on the ground, set the
     -- velocity and spin to zero.
-    if ball_pos.y <= -60 then
+    if ball_pos.y <= -60 and not on_ground then
         velocity = vec2(0)
         spin = 0
+        -- play land sound
+        scene:action(am.play("./sounds/land.ogg"))
+        on_ground = true
     end
 
     -- clamp the ball position so it doesn't disappear
@@ -67,3 +73,6 @@ win.scene:action(function(scene)
     -- apply gravity to the velocity
     velocity = velocity + gravity * am.delta_time
 end)
+
+-- play ocean sound in a loop
+win.scene:action(am.play("./sounds/ocean.ogg", true))
