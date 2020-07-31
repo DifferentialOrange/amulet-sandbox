@@ -12,12 +12,17 @@ local win = am.window{
 win.scene =
     am.group()
     ^ {
-        am.translate(-150, 0)
+        am.translate(-150, 0):tag"left_eye"
         ^ am.circle(vec2(0, 0), 50, red)
         ,
-        am.translate(150, 0)
+        am.translate(150, 0):tag"right_eye"
         ^ am.circle(vec2(0, 0), 50, red)
         ,
         am.translate(0, -25)
         ^ am.rect(-50, -50, 50, 50, yellow)
     }
+
+win.scene:action(function(scene)
+    scene"left_eye".hidden = not win:key_down"a"
+    scene"right_eye".hidden = not win:key_down"b"
+end)
