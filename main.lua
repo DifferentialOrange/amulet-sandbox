@@ -22,6 +22,9 @@ win.scene =
         ^ am.rect(-50, -50, 50, 50, yellow)
     }
 
+win.scene"left_eye".hidden = true
+win.scene"right_eye".hidden = true
+
 win.scene:action(function(scene)
     scene"left_eye".hidden = not win:key_down"a"
     scene"right_eye".hidden = not win:key_down"b"
